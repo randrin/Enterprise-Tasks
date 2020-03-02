@@ -29,4 +29,9 @@ public class ProjectTasksService {
     public Optional<ProjectTasks> findById(Long id) {
         return projectTasksRepository.findById(id);
     }
+
+    public void deleteProjectTask(Long id) {
+        // Optional<ProjectTasks> projectTask = findById(id);
+        projectTasksRepository.deleteById(id);
+    }
 }

@@ -48,4 +48,10 @@ public class ProjectTasksController {
         Optional<ProjectTasks> projectTask = projectTasksService.findById(idTask);
         return new ResponseEntity<Object>(projectTask, HttpStatus.OK);
     }
+
+    @DeleteMapping("/task/{id}")
+    public ResponseEntity<Object> deleteTaskById(@PathVariable("id") Long idTask){
+        projectTasksService.deleteProjectTask(idTask);
+        return new ResponseEntity<Object>("Project Task deleted with success", HttpStatus.OK);
+    }
 }
