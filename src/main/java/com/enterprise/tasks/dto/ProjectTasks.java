@@ -1,9 +1,8 @@
 package com.enterprise.tasks.dto;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import com.enterprise.tasks.utils.ProjectTasksConstants;
+
+import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
@@ -14,10 +13,13 @@ public class ProjectTasks implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @NotBlank(message = "Name task cannot be empty")
+    @NotBlank(message = ProjectTasksConstants.NAME_REQUIRED)
+    @Column(unique = true)
     private String nameTask;
+    @NotBlank(message = ProjectTasksConstants.DESCRIPTION_REQUIRED)
     private String descriptionTask;
     private String status;
+    private String priority;
 
     public ProjectTasks() {
     }
@@ -52,5 +54,13 @@ public class ProjectTasks implements Serializable {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public String getPriority() {
+        return priority;
+    }
+
+    public void setPriority(String priority) {
+        this.priority = priority;
     }
 }

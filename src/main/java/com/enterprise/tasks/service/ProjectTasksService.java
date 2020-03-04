@@ -19,6 +19,9 @@ public class ProjectTasksService {
         if (projectTasks.getStatus() == null || projectTasks.getStatus() == "") {
             projectTasks.setStatus(ProjectTasksConstants.TO_DO);
         }
+        if (projectTasks.getPriority() == null || projectTasks.getPriority() == "") {
+            projectTasks.setPriority(ProjectTasksConstants.PRIORITY_HOLD);
+        }
         return projectTasksRepository.save(projectTasks);
     }
 
