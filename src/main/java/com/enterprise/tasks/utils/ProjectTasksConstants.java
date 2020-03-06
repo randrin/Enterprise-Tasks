@@ -17,7 +17,17 @@ public class ProjectTasksConstants {
     public static final  String PRIORITY_HOLD = "IN HOLD";
     public static final  String PRIORITY_HIGH = "HIGH";
 
-    public static final  String NAME_REQUIRED = "Name task cannot be empty";
-    public static final  String DESCRIPTION_REQUIRED = "Description task cannot be empty";
-    public static final  String PRIORITY_REQUIRED = "Select the priority task";
+    // REQUIRED FIELD
+    public static final  String TASK_NAME_REQUIRED = "Name task cannot be empty";
+    public static final  String TASK_DESCRIPTION_REQUIRED = "Description task cannot be empty";
+    public static final  String TASK_PRIORITY_REQUIRED = "Select the priority task";
+    public static final  String PROJECT_NAME_REQUIRED = "Project Name cannot be empty";
+    public static final  String PROJECT_DESCRIPTION_REQUIRED = "Project Description cannot be empty";
+    public static final  String PROJECT_PRIORITY_REQUIRED = "Select the priority project";
+    public static final  String PROJECT_CREATED_BY_REQUIRED = "Project user's created cannot be empty";
+    public static final  String PROJECT_END_DATE_REQUIRED = "Project end date cannot be empty";
+
+    // VALIDATIONS
+    public static final  String PROJECT_START_BEFORE_END_DATE = "Project Start Date will be before End Date";
+    public static final String PROJECT_PATTERN_VALIDATION = "dd-MM-yyyy HH:mm:ss";
 }

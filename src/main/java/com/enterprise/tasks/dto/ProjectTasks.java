@@ -1,6 +1,7 @@
 package com.enterprise.tasks.dto;
 
 import com.enterprise.tasks.utils.ProjectTasksConstants;
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -13,16 +14,20 @@ public class ProjectTasks implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
 
-    @NotBlank(message = ProjectTasksConstants.NAME_REQUIRED)
+    @NotBlank(message = ProjectTasksConstants.TASK_NAME_REQUIRED)
     private String nameTask;
 
-    @NotBlank(message = ProjectTasksConstants.DESCRIPTION_REQUIRED)
+    @NotBlank(message = ProjectTasksConstants.TASK_DESCRIPTION_REQUIRED)
     private String descriptionTask;
 
     private String status;
 
-    @NotBlank(message = ProjectTasksConstants.PRIORITY_REQUIRED)
+    @NotBlank(message = ProjectTasksConstants.TASK_PRIORITY_REQUIRED)
     private String priority;
+
+    @ManyToOne
+    @JsonBackReference
+    private Project project;
 
     public ProjectTasks() {
     }
@@ -65,5 +70,13 @@ public class ProjectTasks implements Serializable {
 
     public void setPriority(String priority) {
         this.priority = priority;
+    }
+
+    public Project getProject() {
+        return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 }
