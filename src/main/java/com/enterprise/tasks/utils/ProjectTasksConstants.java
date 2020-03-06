@@ -3,7 +3,7 @@ package com.enterprise.tasks.utils;
 public class ProjectTasksConstants {
 
     // STATUS
-    public static final  String TO_DO = "TO DO";
+    public static final  String TO_DO = "TO_DO";
     public static final  String DONE = "DONE";
     public static final  String IN_PROGRESS = "IN PROGRESS";
     public static final  String CLOSED = "CLOSED";
@@ -18,5 +18,6 @@ public class ProjectTasksConstants {
     public static final  String PRIORITY_HIGH = "HIGH";
 
     public static final  String NAME_REQUIRED = "Name task cannot be empty";
-    public static final  String DESCRIPTION_REQUIRED = "Name task cannot be empty";
+    public static final  String DESCRIPTION_REQUIRED = "Description task cannot be empty";
+    public static final  String PRIORITY_REQUIRED = "Select the priority task";
 }

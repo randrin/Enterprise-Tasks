@@ -14,11 +14,14 @@ public class ProjectTasks implements Serializable {
     private Long Id;
 
     @NotBlank(message = ProjectTasksConstants.NAME_REQUIRED)
-    @Column(unique = true)
     private String nameTask;
+
     @NotBlank(message = ProjectTasksConstants.DESCRIPTION_REQUIRED)
     private String descriptionTask;
+
     private String status;
+
+    @NotBlank(message = ProjectTasksConstants.PRIORITY_REQUIRED)
     private String priority;
 
     public ProjectTasks() {
