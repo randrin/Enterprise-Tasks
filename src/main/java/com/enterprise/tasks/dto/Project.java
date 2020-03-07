@@ -29,6 +29,8 @@ public class Project implements Serializable {
     @NotBlank(message = ProjectTasksConstants.PROJECT_CREATED_BY_REQUIRED)
     private String projectCreatedBy;
 
+    private String projectLogo;
+
     private String priority;
 
     @JsonFormat(pattern = ProjectTasksConstants.PROJECT_PATTERN_VALIDATION)
@@ -46,6 +48,7 @@ public class Project implements Serializable {
     public boolean isValid () {
         return this.getProjectStart().isAfter(this.getProjectEnd());
     }
+
     public Long getId() {
         return Id;
     }
@@ -108,5 +111,13 @@ public class Project implements Serializable {
 
     public void setProjectCreatedBy(String projectCreatedBy) {
         this.projectCreatedBy = projectCreatedBy;
+    }
+
+    public String getProjectLogo() {
+        return projectLogo;
+    }
+
+    public void setProjectLogo(String projectLogo) {
+        this.projectLogo = projectLogo;
     }
 }

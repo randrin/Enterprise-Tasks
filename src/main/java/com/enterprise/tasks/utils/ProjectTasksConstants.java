@@ -2,6 +2,9 @@ package com.enterprise.tasks.utils;
 
 public class ProjectTasksConstants {
 
+    // TOOLS
+    public static final  String PROJECT_DEFAULT_IMAGE_LOGO = "https://www.kazoucoin.com/assets/img/photo.jpg";
+
     // STATUS
     public static final  String TO_DO = "TO_DO";
     public static final  String DONE = "DONE";
@@ -25,6 +28,7 @@ public class ProjectTasksConstants {
     public static final  String PROJECT_DESCRIPTION_REQUIRED = "Project Description cannot be empty";
     public static final  String PROJECT_PRIORITY_REQUIRED = "Select the priority project";
     public static final  String PROJECT_CREATED_BY_REQUIRED = "Project user's created cannot be empty";
+    public static final  String PROJECT_IMAGE_LOGO_REQUIRED = "Project logo cannot be empty";
     public static final  String PROJECT_END_DATE_REQUIRED = "Project end date cannot be empty";
 
     // VALIDATIONS

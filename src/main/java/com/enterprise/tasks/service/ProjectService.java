@@ -26,6 +26,10 @@ public class ProjectService {
             project.setPriority(ProjectTasksConstants.PRIORITY_MINOR);
         }
 
+        if (project.getProjectLogo() == null || project.getProjectLogo().equals("")) {
+            project.setProjectLogo(ProjectTasksConstants.PROJECT_DEFAULT_IMAGE_LOGO);
+        }
+
         return projectRepository.save(project);
     }
 
