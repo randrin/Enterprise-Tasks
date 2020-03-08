@@ -29,6 +29,10 @@ public class ProjectTasks implements Serializable {
     @JsonBackReference
     private Project project;
 
+    @ManyToOne
+    @JsonBackReference
+    private Employee employee;
+
     public ProjectTasks() {
     }
 

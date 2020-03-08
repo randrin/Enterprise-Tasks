@@ -30,8 +30,13 @@ public class ProjectTasksConstants {
     public static final  String PROJECT_CREATED_BY_REQUIRED = "Project user's created cannot be empty";
     public static final  String PROJECT_IMAGE_LOGO_REQUIRED = "Project logo cannot be empty";
     public static final  String PROJECT_END_DATE_REQUIRED = "Project end date cannot be empty";
+    public static final  String EMPLOYEE_FIRST_NAME_REQUIRED = "First Name Employee cannot be empty";
+    public static final  String EMPLOYEE_DEPARTMENT_REQUIRED = "Department Employee cannot be empty";
+    public static final  String EMPLOYEE_GENDER_REQUIRED = "Gender Employee cannot be empty";
+    public static final  String EMPLOYEE_EMAIL_REQUIRED = "Email Employee cannot be empty";
 
     // VALIDATIONS
     public static final  String PROJECT_START_BEFORE_END_DATE = "Project Start Date will be before End Date";
     public static final String PROJECT_PATTERN_VALIDATION = "dd-MM-yyyy HH:mm:ss";
+    public static final String EMPLOYEE_DATE_OF_BORN_PATTERN_VALIDATION = "dd/MM/yyyy";
 }

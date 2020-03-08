@@ -31,7 +31,6 @@ public class ProjectTasksService {
     }
 
     public void deleteProjectTask(Long id) {
-        // Optional<ProjectTasks> projectTask = findById(id);
         projectTasksRepository.deleteById(id);
     }
 }
