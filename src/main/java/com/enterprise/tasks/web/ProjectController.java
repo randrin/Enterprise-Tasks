@@ -4,6 +4,7 @@ import com.enterprise.tasks.dto.Project;
 import com.enterprise.tasks.service.ProjectService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.FieldError;
@@ -23,7 +24,7 @@ public class ProjectController {
     @Autowired
     private ProjectService projectService;
 
-    @PostMapping("/saveProject")
+    @PostMapping(value = "/saveProject", consumes = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Object> saveProject (@Valid @RequestBody Project project, BindingResult result) throws ParseException {
 
         if (result.hasErrors()) {

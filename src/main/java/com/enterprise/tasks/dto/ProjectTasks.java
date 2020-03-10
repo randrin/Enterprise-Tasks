@@ -30,7 +30,6 @@ public class ProjectTasks implements Serializable {
     private Project project;
 
     @ManyToOne
-    @JsonBackReference
     private Employee employee;
 
     public ProjectTasks() {
