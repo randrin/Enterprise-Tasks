@@ -31,7 +31,7 @@ public class Employee  implements Serializable {
     @NotBlank(message = ProjectTasksConstants.EMPLOYEE_GENDER_REQUIRED)
     private String employeeEmail;
 
-    @JsonFormat(pattern = ProjectTasksConstants.EMPLOYEE_DATE_OF_BORN_PATTERN_VALIDATION)
+    @JsonFormat(pattern = ProjectTasksConstants.PROJECT_PATTERN_VALIDATION)
     private LocalDateTime employeeBornDate;
 
     private String employeePhoneNumber;
@@ -39,7 +39,6 @@ public class Employee  implements Serializable {
     private String employeeMatricule;
 
     @OneToMany(mappedBy = "employee")
-    @JsonManagedReference
     private Collection<ProjectTasks> projectTasksList;
 
     public Long getId() {

@@ -23,7 +23,7 @@ public class EmployeeService {
         return employeeRepository.save(employee);
     }
 
-    public Iterable<Employee> getAllTasksEmployee() {
+    public Iterable<Employee> getAllEmployee() {
         return employeeRepository.findAll();
     }
 

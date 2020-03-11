@@ -25,7 +25,7 @@ public class ProjectController {
     private ProjectService projectService;
 
     @PostMapping(value = "/saveProject", consumes = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<Object> saveProject (@Valid @RequestBody Project project, BindingResult result) throws ParseException {
+    public ResponseEntity<Object> saveProject (@Valid @RequestBody Project project, BindingResult result)  {
 
         if (result.hasErrors()) {
             Map<String, String> errors = new HashMap<String, String>();
