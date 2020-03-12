@@ -1,5 +1,8 @@
 package com.enterprise.tasks.utils;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
@@ -7,7 +10,10 @@ import java.util.Date;
 
 public class ProjectsUtils {
 
+    private static final Logger logger = LoggerFactory.getLogger(ProjectsUtils.class);
+
     public static LocalDateTime convertDateToLocalDateTime(Date convertDate) {
+        logger.info(ProjectTasksConstants.METHOD + " convertDateToLocalDateTime()");
         return convertDate.toInstant().atZone(ZoneId.systemDefault()).toLocalDateTime();
     }
 
@@ -15,7 +21,7 @@ public class ProjectsUtils {
      * Generate Matricule Employées: xxx|xxx|xx|x|xx
      */
     public static String generateMatriculeEmployee(String nom, String prenom, LocalDateTime dateNaissance, String role) {
-        System.out.println("################# DATE NAISSANCE ... " +dateNaissance);
+        logger.info(ProjectTasksConstants.METHOD + " generateMatriculeEmployee()");
         String matricule = "";
 
         SimpleDateFormat formatter = new SimpleDateFormat("yyyy/MM/dd");
@@ -30,7 +36,7 @@ public class ProjectsUtils {
 
         matricule = matricule1 + matricule2 + matricule3 + matricule4 + matricule5;
 
-        System.out.println("################# Matricule ... " +matricule);
+        logger.info(ProjectTasksConstants.RESULT_METHOD + " generateMatriculeEmployee() - " + matricule);
         return matricule;
     }
 }

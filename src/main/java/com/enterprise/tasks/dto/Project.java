@@ -39,13 +39,13 @@ public class Project implements Serializable {
     @JsonFormat(pattern = ProjectTasksConstants.PROJECT_PATTERN_VALIDATION)
     private LocalDateTime projectEnd;
 
-    @OneToMany (mappedBy = "project")
+    @OneToMany(mappedBy = "project")
     @JsonManagedReference
     private Collection<ProjectTasks> projectTasksList;
 
     @AssertFalse(message = ProjectTasksConstants.PROJECT_START_BEFORE_END_DATE)
     @JsonProperty(access = Access.WRITE_ONLY)
-    public boolean isValid () {
+    public boolean isValid() {
         return this.getProjectStart().isAfter(this.getProjectEnd());
     }
 
@@ -85,7 +85,7 @@ public class Project implements Serializable {
         return projectStart;
     }
 
-    public void setProjectStart(LocalDateTime  projectStart) {
+    public void setProjectStart(LocalDateTime projectStart) {
         this.projectStart = projectStart;
     }
 

@@ -2,7 +2,6 @@ package com.enterprise.tasks.dto;
 
 import com.enterprise.tasks.utils.ProjectTasksConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Entity
-public class Employee  implements Serializable {
+public class Employee implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
