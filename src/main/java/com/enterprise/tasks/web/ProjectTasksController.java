@@ -3,6 +3,7 @@ package com.enterprise.tasks.web;
 import com.enterprise.tasks.dto.ProjectTasks;
 import com.enterprise.tasks.services.ProjectTasksService;
 import com.enterprise.tasks.utils.ProjectTasksConstants;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,10 @@ public class ProjectTasksController {
     private ProjectTasksService projectTasksService;
 
     @PostMapping(value = "/saveTask", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(
+            value = "Add a new Project Task",
+            notes = "Add a specific project task in the enterprise",
+            response = ProjectTasks.class)
     public ResponseEntity<Object> saveTask(@Valid @RequestBody ProjectTasks projectTask, BindingResult result) {
 
         logger.info(ProjectTasksConstants.BEGIN + " POST -> /api/tasks/saveTask - Obejct [" + ProjectTasks.class + "]");
@@ -46,6 +51,10 @@ public class ProjectTasksController {
     }
 
     @GetMapping("/getTasks")
+    @ApiOperation(
+            value = "Get all Project Tasks by ID",
+            notes = "Retrieve all project tasks from the enterprise",
+            response = ProjectTasks.class)
     public Iterable<ProjectTasks> getTasks() {
         logger.info(ProjectTasksConstants.BEGIN + " GET -> /api/tasks/getTasks - Obejct [" + ProjectTasks.class + "]");
         Iterable<ProjectTasks> projectTasks = projectTasksService.getAllTasks();
@@ -54,6 +63,10 @@ public class ProjectTasksController {
     }
 
     @GetMapping("/task/{id}")
+    @ApiOperation(
+            value = "Find Project Task by ID",
+            notes = "Provide an id to identify the specific project task from the enterprise",
+            response = ProjectTasks.class)
     public ResponseEntity<Object> getTaskById(@PathVariable("id") Long idTask) {
         logger.info(ProjectTasksConstants.BEGIN + " GET -> /api/tasks/task/" + idTask);
         Optional<ProjectTasks> projectTask = projectTasksService.findById(idTask);
@@ -62,6 +75,10 @@ public class ProjectTasksController {
     }
 
     @DeleteMapping("/task/{id}")
+    @ApiOperation(
+            value = "Delete Project Task by ID",
+            notes = "Provide an id to delete the specific project task from the enterprise",
+            response = ProjectTasks.class)
     public ResponseEntity<Object> deleteTaskById(@PathVariable("id") Long idTask) {
         logger.info(ProjectTasksConstants.BEGIN + " DELETE -> /api/tasks/task/" + idTask);
         projectTasksService.deleteProjectTask(idTask);

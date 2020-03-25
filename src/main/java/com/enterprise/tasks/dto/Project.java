@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonProperty.Access;
+import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
 import javax.validation.constraints.AssertFalse;
@@ -14,6 +15,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Entity
+@ApiModel(description = "Details about the Project")
 public class Project implements Serializable {
 
     @Id

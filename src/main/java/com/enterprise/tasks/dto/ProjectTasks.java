@@ -2,12 +2,14 @@ package com.enterprise.tasks.dto;
 
 import com.enterprise.tasks.utils.ProjectTasksConstants;
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import java.io.Serializable;
 
 @Entity
+@ApiModel(description = "Details about the Project Tasks")
 public class ProjectTasks implements Serializable {
 
     @Id

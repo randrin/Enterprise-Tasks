@@ -2,6 +2,7 @@ package com.enterprise.tasks.dto;
 
 import com.enterprise.tasks.utils.ProjectTasksConstants;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.annotations.ApiModel;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -10,6 +11,7 @@ import java.time.LocalDateTime;
 import java.util.Collection;
 
 @Entity
+@ApiModel(description = "Details about the Employee")
 public class Employee implements Serializable {
 
     @Id

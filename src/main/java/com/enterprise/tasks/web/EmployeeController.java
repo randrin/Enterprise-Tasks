@@ -4,6 +4,7 @@ import com.enterprise.tasks.dto.Employee;
 import com.enterprise.tasks.services.EmployeeService;
 import com.enterprise.tasks.utils.ProjectTasksConstants;
 import com.enterprise.tasks.utils.ProjectsUtils;
+import io.swagger.annotations.ApiOperation;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +31,10 @@ public class EmployeeController {
     private EmployeeService employeeService;
 
     @PostMapping(value = "/saveEmployee", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @ApiOperation(
+            value = "Add a new Employee",
+            notes = "Add a specific employee in the enterprise",
+            response = Employee.class)
     public ResponseEntity<Object> saveEmployee(@Valid @RequestBody Employee employee, BindingResult result) {
 
         logger.info(ProjectTasksConstants.BEGIN + " POST -> /api/saveEmployee - Obejct [" + Employee.class + "]");
@@ -48,6 +53,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/getEmployees")
+    @ApiOperation(
+            value = "Get All Employees",
+            notes = "Retrieve all employees from the enterprise",
+            response = Employee.class)
     public Iterable<Employee> getEmployees() {
         logger.info(ProjectTasksConstants.BEGIN + " GET -> /api/getEmployees - Obejct [" + Employee.class + "]");
         Iterable<Employee> employees = employeeService.getAllEmployee();
@@ -56,6 +65,10 @@ public class EmployeeController {
     }
 
     @GetMapping("/employee/{id}")
+    @ApiOperation(
+            value = "Find Employee by ID",
+            notes = "Provide an id to identify the specific employee from the enterprise",
+            response = Employee.class)
     public ResponseEntity<Object> getEmployeeById(@PathVariable("id") Long idEmployee) {
         logger.info(ProjectTasksConstants.BEGIN + " GET -> /api/employee/" + idEmployee);
         Optional<Employee> employee = employeeService.findById(idEmployee);
@@ -64,6 +77,10 @@ public class EmployeeController {
     }
 
     @DeleteMapping("/employee/{id}")
+    @ApiOperation(
+            value = "Delete Employee by ID",
+            notes = "Provide an id to delete the specific employee from the enterprise",
+            response = Employee.class)
     public ResponseEntity<Object> deleteEmployeeById(@PathVariable("id") Long idEmployee) {
         logger.info(ProjectTasksConstants.BEGIN + " DELETE -> /api/employee/" + idEmployee);
         employeeService.deleteEmployee(idEmployee);
